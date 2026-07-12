@@ -21,18 +21,18 @@ public class Model {
 
     public synchronized void processKeyTyped(String typed) {
         typedChar = typed;
-        if (typed.equals("ESC")) { 
-            enableKeyRollover = !enableKeyRollover; // 同時押し許可モード反転
-            controller.setKeyRollover(enableKeyRollover);
-        }
+//        if (typed.equals("ESC")) { 
+//            enableKeyRollover = !enableKeyRollover; // 同時押し許可モード反転
+//            controller.setKeyRollover(enableKeyRollover);
+//        }
         view.repaint();        
     }
 
     public synchronized void processMousePressed(int x, int y) {
-        mx = x;
-        my = y;
-        view.playBombSound();
-        view.repaint();
+//        mx = x;
+//        my = y;
+//        view.playBombSound();
+//        view.repaint();
     }
 
     public void start() {

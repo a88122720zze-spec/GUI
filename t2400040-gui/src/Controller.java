@@ -4,8 +4,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.swing.Timer;
@@ -41,14 +41,14 @@ public class Controller implements ActionListener, KeyListener, MouseListener {
     private String getKeyName(KeyEvent e) {
         // 押されたキーを文字列表現に変換
         switch (e.getKeyCode()) {
-        case KeyEvent.VK_UP:         return "UP";
-        case KeyEvent.VK_DOWN:       return "DOWN";
-        case KeyEvent.VK_LEFT:       return "LEFT";
-        case KeyEvent.VK_RIGHT:      return "RIGHT"; 
-        case KeyEvent.VK_SHIFT:      return "SHIFT";
-        case KeyEvent.VK_CONTROL:    return "CTRL";
-        case KeyEvent.VK_ALT:        return "ALT";            
-        case KeyEvent.VK_ESCAPE:     return "ESC";
+//        case KeyEvent.VK_UP:         return "UP";
+//        case KeyEvent.VK_DOWN:       return "DOWN";
+//        case KeyEvent.VK_LEFT:       return "LEFT";
+//        case KeyEvent.VK_RIGHT:      return "RIGHT"; 
+//        case KeyEvent.VK_SHIFT:      return "SHIFT";
+//        case KeyEvent.VK_CONTROL:    return "CTRL";
+//        case KeyEvent.VK_ALT:        return "ALT";            
+//        case KeyEvent.VK_ESCAPE:     return "ESC";//必要ないので省略
         case KeyEvent.VK_ENTER:      return "ENTER";
         case KeyEvent.VK_BACK_SPACE: return "BS";
         default: return "" + e.getKeyChar();

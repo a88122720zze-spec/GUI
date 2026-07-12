@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
 
 import javax.swing.JPanel;
 
@@ -19,10 +18,10 @@ public class View extends JPanel {
     public View(Model model) {
         this.model = model;
 
-        // 画像を読み込む．画像ファイルは src においておくと bin に自動コピーされる
-        image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("robot.png"));
-        // サウンドを読み込む
-        sound = new WavSound(getClass().getResource("bomb.wav"));
+//        // 画像を読み込む．画像ファイルは src においておくと bin に自動コピーされる
+//        image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("robot.png"));
+//        // サウンドを読み込む
+//        sound = new WavSound(getClass().getResource("bomb.wav"));
       }
 
     /**
@@ -40,9 +39,10 @@ public class View extends JPanel {
 
         g.drawString("Time: " + model.getTime(), 100, 150);
         g.drawString("Key Typed: " + model.getTypedChar(), 100, 200);
-        g.drawString("KeyRollover: " + model.getEnableKeyRollover(), 100, 250);
-        g.drawString("Mouse Pressed: " + model.getMX() + "," + model.getMY(), 100, 300);
-
+        //g.drawString("KeyRollover: " + model.getEnableKeyRollover(), 100, 250);
+        //g.drawString("Mouse Pressed: " + model.getMX() + "," + model.getMY(), 100, 300);
+        //g.drawRect(x, y, width, height);
+        g.drawRect(200,200, 200, 300);
         // 画像の表示例
         g.drawImage(image, model.getMX(), model.getMY(), this);
 

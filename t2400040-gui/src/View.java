@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 
 import javax.swing.JPanel;
 
@@ -12,7 +11,7 @@ public class View extends JPanel {
     private Model model;
 
     // Sample instance variables:
-    private Image image;
+    //private Image image;
     private WavSound sound;
 
     public View(Model model) {
@@ -46,6 +45,13 @@ public class View extends JPanel {
         g.drawRect(150,100, 250, 160);//画像にする
         g.drawString("特性: ", 200, 300);
         g.drawString("type: " + model.getString(), 200, 350);
+        
+        //候補を示す
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
+        g.setColor(Color.WHITE);
+        for(int i=0;i<model.getKouho().length; i++) {
+        	g.drawString(model.getKouho()[i], 500,130+30*i );
+        }
         
         // 画像の表示例
         //g.drawImage(image, model.getMX(), model.getMY(), this);

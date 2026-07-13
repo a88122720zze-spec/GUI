@@ -1,3 +1,10 @@
-いい人:いいひと:iihito:0b11010011;
-イケメン:いけめん:ikemen:int feature = 0b01000101;
-陰キャ:いんきゃ:inkya:0b00000000;
+美少女:びしょうじょ:bishoujo:0b00001010
+美少年:びしょうねん:bishounen:0b00001101
+馬鹿正直:ばかしょうじき:bakashoujiki:0b00010011
+冒険好き:ぼうけんずき:boukenzuki:0b00100011
+バイタリティがある:ばいたりてぃがある:baitaritigaaru:0b01100011
+馬鹿:ばか:baka:0b00000000
+分析家:ぶんせきか:bunsekika:0b00110111
+文化気質:ぶんかきしつ:bunkakisitu:0b10010011
+弁が立つ:べんがたつ:bengatatsu:0b01010111
+ぼっち:ぼっち:botchi:int feature = 0b00000011

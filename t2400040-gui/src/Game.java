@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -7,11 +9,11 @@ public class Game extends JFrame {
     /** 初期ウィンドウサイズ（高さ） */
     public static final int WIN_HEIGHT = 500;
     /** 初期ウィンドウサイズ（幅） */
-    public static final int WIN_WIDTH = 600;
+    public static final int WIN_WIDTH = 800;
 
     private Model model = null;
 
-    public Game() {
+    public Game() throws IOException {
         // Window タイトルの設定
         setTitle("GUI Sample");
         // Window を閉じるボタンを有効にする
@@ -37,8 +39,9 @@ public class Game extends JFrame {
         model.start();
     }
 
-    /** 起動用 main 関数 */
-    public static void main(String[] args) {
+    /** 起動用 main 関数 
+     * @throws IOException */
+    public static void main(String[] args) throws IOException {
         Game game = new Game();
         game.start();
     }

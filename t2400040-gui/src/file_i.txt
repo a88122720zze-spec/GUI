@@ -1,0 +1,10 @@
+いい人:いいひと:iihito:0b11010011
+イケメン:いけめん:ikemen:int feature = 0b01000101
+陰キャ:いんきゃ:inkya:0b00000000
+粋:いき:iki:0b00000111
+妹気質:いもうときしつ:imoutokishitsu:0b00001010
+いたずらっ子:いたずらっこ:itazurakko:0b01101001
+潔い:いさぎよい:isagiyoi:0b00010111
+癒し系:いやしけい:iyashikei:0b11001011
+インテリ:いんてり:interi:0b00110111
+意識が高い:いしきがたかい:ishikigatakai:0b01110111

@@ -1,8 +1,11 @@
+import java.io.IOException;
+
 public class Model {
 
     private View view;
     private Controller controller;
     private Type type;
+    private Judge judge;
 
     // Sample instance variables:
     private int time;
@@ -10,10 +13,13 @@ public class Model {
     private int mx, my;
     private boolean enableKeyRollover = true;
 
-    public Model() {
+    public Model() throws IOException {
         view = new View(this);
         controller = new Controller(this);
         type = new Type(this);
+        judge =new Judge();
+        judge.reselect();
+        judge.readtxt();
     }
 
     public synchronized void processTimeElapsed(int msec) {
@@ -80,6 +86,9 @@ public class Model {
     }
     public String getString() {
     	return type.getString();
+    }
+    public String[] getKouho() {
+    	return judge.getStrings();
     }
 
 }

@@ -21,7 +21,16 @@ public class Human {
 	public void gagelow() {
 		gage -=10;
 	}
-	
+	public int endcheck() {
+		if(gage <=0) {//敗北の意味で終了
+			return -1;
+		}
+		else if(gage <= 100) {//社会復帰で終了
+			return 1;
+		}
+		
+		return 0;//続ける
+	}
 	
 	
 	public String getname() {

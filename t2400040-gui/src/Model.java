@@ -10,7 +10,7 @@ public class Model {
     private Human human;
 
     // Sample instance variables:
-    private int time;
+    private Timer time;
     private String typedChar = "";
     private int mx, my;
     private boolean enableKeyRollover = true;
@@ -23,10 +23,22 @@ public class Model {
         judge.reselect();
         judge.readtxt();
         human = new Human();
+        time =new Timer();
     }
 
-    public synchronized void processTimeElapsed(int msec) {
-        time++;
+    public synchronized void processTimeElapsed(int msec) {//時間経過
+    	time.addtimer();
+    	if( time.judgetime()) {//0以下
+    		time.reset();
+    		human.gagelow();
+    	}
+    	
+    	if(human.endcheck() ==-1) {
+    		//終了処理リザルト画面へ
+    	}
+    	else if(human.endcheck() ==-1) {
+    		//終了処理、リザルト画面へ
+    	}
         view.repaint();
     }
 
@@ -42,6 +54,7 @@ public class Model {
         		human.gageadd( num);
         		judge.reset();
         		type.reset();
+        		time.reset();
         	}
         	else {
         		human.gagelow();
@@ -82,7 +95,7 @@ public class Model {
     }
 
     public int getTime() {
-        return time;
+        return time.getturntime();
     }
 
     public String getTypedChar() {

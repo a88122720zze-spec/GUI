@@ -37,7 +37,7 @@ public class View extends JPanel {
         g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 32));
         g.setColor(Color.WHITE);
 
-        g.drawString("Timer: " + model.getTime(), 400, 50);
+        g.drawString("Timer: " + model.getTime()/10, 400, 50);
         //g.drawString("Key Typed: " + model.getTypedChar(), 100, 200);
         //g.drawString("KeyRollover: " + model.getEnableKeyRollover(), 100, 250);
         //g.drawString("Mouse Pressed: " + model.getMX() + "," + model.getMY(), 100, 300);

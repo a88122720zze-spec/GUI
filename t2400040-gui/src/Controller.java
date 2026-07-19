@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,7 +46,7 @@ public class Controller implements ActionListener, KeyListener, MouseListener {
 //        case KeyEvent.VK_DOWN:       return "DOWN";
 //        case KeyEvent.VK_LEFT:       return "LEFT";
 //        case KeyEvent.VK_RIGHT:      return "RIGHT"; 
-//        case KeyEvent.VK_SHIFT:      return "SHIFT";
+        case KeyEvent.VK_SHIFT:      return "SHIFT";
 //        case KeyEvent.VK_CONTROL:    return "CTRL";
 //        case KeyEvent.VK_ALT:        return "ALT";            
 //        case KeyEvent.VK_ESCAPE:     return "ESC";//必要ないので省略
@@ -65,14 +66,24 @@ public class Controller implements ActionListener, KeyListener, MouseListener {
         String name = getKeyName(e);
         // 複数キーの同時押しを認めない場合
         if (!enableKeyRollover) {
-            model.processKeyTyped(name);
+            try {
+				model.processKeyTyped(name);
+			} catch (IOException e1) {
+				// TODO 自動生成された catch ブロック
+				e1.printStackTrace();
+			}
             return;
         }
         // 押しっぱなしにした場合に同じキーが複数回登録されることを防ぐ
         if (!pressedKeys.contains(name)) 
             pressedKeys.add(getKeyName(e));        
         String s = pressedKeys.stream().collect(Collectors.joining("+"));
-        model.processKeyTyped(s);
+        try {
+			model.processKeyTyped(s);
+		} catch (IOException e1) {
+			// TODO 自動生成された catch ブロック
+			e1.printStackTrace();
+		}
     }
 
     @Override

@@ -10,13 +10,20 @@ public class TitleState implements State {
 
 	// タイトル状態におけるキータイプイベント処理
 	public State processKeyTyped(String typed) {
-		if (typed.equals(" "))
+		if (typed.equals("ENTER")) {
 			try {
 				return new GameState(model);
 			} catch (IOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
+		}
+		else if(typed.equals("p")) {
+			return new HowtoPlayState(model);
+		}
+		else if(typed.equals("r")) {
+			return new RankingState(model);
+		}
 		return this;
 	}
 	// タイトル状態の時間経過イベントを処理するメソッド
@@ -27,8 +34,23 @@ public class TitleState implements State {
 	
 	// タイトル状態を描画するメソッド
 	public void paintComponent(Graphics g) {
-		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 32));
+		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
 		g.setColor(Color.WHITE);
-		g.drawString("TITLE", 100, 50);
+		//タイトル名
+		g.drawString("SPEED PRAISE GAME", 150, 50);
+		
+		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
+		g.setColor(Color.WHITE);
+		//遊び方
+		g.drawString("遊び方  ->  p", 200, 100);
+		//ランキング
+		g.drawString("ランキング -> r" , 200, 150);
+		
+		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 30));
+		g.setColor(Color.WHITE);
+		//遊び方
+		g.drawString("Enter to start Game!!", 200, 300);
+		
+		
 	}
 }

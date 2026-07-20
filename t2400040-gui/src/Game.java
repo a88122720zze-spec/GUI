@@ -7,9 +7,9 @@ import javax.swing.WindowConstants;
 public class Game extends JFrame {
 
     /** 初期ウィンドウサイズ（高さ） */
-    public static final int WIN_HEIGHT = 500;
+    public static final int WIN_HEIGHT = 550;
     /** 初期ウィンドウサイズ（幅） */
-    public static final int WIN_WIDTH = 800;
+    public static final int WIN_WIDTH = 850;
 
     private Model model = null;
 

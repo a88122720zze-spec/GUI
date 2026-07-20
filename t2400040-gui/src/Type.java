@@ -7,8 +7,8 @@ public class Type {
 		String decided;
 		String notdecided;
 	public
-		Type(Model model) {
-			this.model =model;
+		Type() {
+			//this.model =model;
 			decided ="";
 			notdecided ="";
 			jp = new  toJapanese();

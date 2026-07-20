@@ -35,6 +35,9 @@ private
 	            return "え";
 	        case "o":
 	            return "お";
+	        //伸ばし棒
+	        case "-":
+	            return "ー";
 	        //数字    
 	        case "0": return "０";
 	        case "1": return "１";
@@ -60,7 +63,6 @@ private
  	        case "=": return "＝";
  	        case "~": return "～";
  	        case "|": return "｜";
- 	        case "-": return "－";
  	        case "^": return "＾";
  	        case "\\": return "￥";   // バックスラッシュ
  	        case "+": return "＋";

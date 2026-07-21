@@ -35,6 +35,7 @@ public class GameState implements State {
       	int num =judge.judgeFeature(type.getString(), human.getfeature());//判定 文字列
       	if(num != 0) {//正解
       		human.gageadd( num);
+      		model.addscore(num*num*num);
       		try {
 				judge.reset();
 			} catch (IOException e) {
@@ -44,9 +45,10 @@ public class GameState implements State {
       		type.reset();
       		model.timereset();
       	}
-      	else {
+      	else {//不正解
       		human.gagelow();
       		type.reset();
+      		model.addscore(-50);//50ポイントを引く
       	}
       	
       }
@@ -70,12 +72,25 @@ public class GameState implements State {
     		human.gagelow();
     	}
     	
-    	if(human.endcheck() ==-1) {
+    	if(human.endcheck() ==-1) {//負け
     		//終了処理リザルト画面へ
+    		model.lastscore(5000);//0設定にする
+    		try {
+				return  new ResultState(model);
+			} catch (IOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
     	}
-    	else if(human.endcheck() ==-1) {
+    	else if(human.endcheck() ==1) {//勝ち
+    		model.lastscore(model.getalltime());
     		//終了処理、リザルト画面へ
-    		//return new ResultGame(model);
+    		try {
+				return new ResultState(model);
+			} catch (IOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
     	}
         //view.repaint();
 		

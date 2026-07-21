@@ -12,12 +12,15 @@ public class Model {
     //private String typedChar = "";
     private int mx, my;
     private boolean enableKeyRollover = true;
+    private User user;
 
     public Model() throws IOException {
         view = new View(this);
         controller = new Controller(this);
         time =new Timer();
         state = new TitleState(this); // 初期状態はタイトル状態
+        user =new User();
+        
     }
 
     public synchronized void processTimeElapsed(int msec) {//時間経過
@@ -62,10 +65,11 @@ public class Model {
     public boolean judgetime() {
     	return time.judgetime();
     }
+    public int getalltime() {
+		return time.getalltime();
+	}
 
-//    public String getTypedChar() {
-//        return typedChar;
-//    }
+
 
     public int getMX() {
         return mx;
@@ -81,20 +85,27 @@ public class Model {
     public State getState() {
     	return state;
     }
-//    public String getString() {
-//    	return type.getString();
-//    }
-//    public ArrayList<Feature> getFeature() {
-//        return judge.getFeature();
-//    }
-//    public String getselected() {
-//    	return judge.getselected();
-//    }
-//    public String getFeatureThings() {
-//    	return human.getfeatureThings();
-//    }
-//    public int getlife() {
-//    	return human.getgege();
-//    }
+    
+    public void  resetname() {
+    	user.resetname();
+    }
+    public void  resetscore() {
+    	user.resetscore();
+    }
+    public void  addscore(int num) {
+    	user.addscore(num);
+    }
+    public void  lastscore(int time) {
+    	user.lastscore(time);
+    }
+    public void addname(String st) {
+    	user.addname(st);
+    }
+    public String  getname() {
+    	return user.getname();
+    }
+    public int getscore() {
+    	return user.getscore();
+    }
 
 }

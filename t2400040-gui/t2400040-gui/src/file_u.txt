@@ -1,0 +1,10 @@
+美しい:うつくしい:utsukushii:00001010
+打たれ強い:うたれづよい:utarezuyoi:00010111
+腕っぷしが強い:うでっぷしがつよい:udeppushigatsuyoi:00000101
+運動神経抜群:うんどうしんけいばつぐん:undoushinkeibatsugun:01000111
+嘘がつけない:うそがつけない:usogatsukenai:10011011
+噂好き:うわさずき:uwasazuki:01100011
+嘘つき:うそつき:usotuki:00000000
+裏表がない:うらおもてがない:uraomoteganai:11010011
+器が大きい:うつわがおおきい:utsuwagaookii:10000111
+うつけ者:うつけもの:utukemono:0000000
